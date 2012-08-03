@@ -13,7 +13,7 @@ board.on("ready", function() {
   });
 
 
-  lcd.write('Hi! ' + new Date().getTime());
+  lcd.print("Hi! " + new Date().getTime());
 
   this.repl.inject({
     lcd: lcd
