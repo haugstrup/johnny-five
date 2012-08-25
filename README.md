@@ -14,6 +14,7 @@
 ## Many fragments. Some large, some small.
 
 
+### [Biped Nodebot](http://jsfiddle.net/rwaldron/WZkn5/show/light/) NEW!
 ### [Slider Controlled Panning Servo](http://jsfiddle.net/rwaldron/kZakv/show/light/)
 ### [Joystick Controlled Laser (pan/tilt) 1](http://jsfiddle.net/rwaldron/HPqms/show/light/)
 ### [Joystick Controlled Laser (pan/tilt) 2](http://jsfiddle.net/rwaldron/YHb7A/show/light/)
@@ -25,6 +26,7 @@
 
 ## Setup and Assemble Arduino
 
+- Recommended Starting Kit: [Sparkfun Inventor's Kit](https://www.sparkfun.com/products/11022)
 - Download Arduino IDE
   - [OSX](http://arduino.googlecode.com/files/arduino-1.0.1-macosx.zip)
   - [Linux 32 bit](http://arduino.googlecode.com/files/arduino-1.0.1-linux.tgz)
@@ -32,6 +34,7 @@
   - Windows support coming soon.
 - Plug in your Arduino or Arduino compatible microcontroller via USB
 - Open the Arduino IDE, select: File > Examples > Firmata > StandardFirmata
+  - Make sure that the version of Firmata is [2.2](http://at.or.at/hans/pd/Firmata-2.2.zip). There are known issues with 2.3
 - Click the "Upload" button.
 
 If the upload was successful, the board is now prepared and you can close the Arduino IDE.
@@ -70,7 +73,7 @@ var five = require("johnny-five"),
 board.on("ready", function() {
 
   // Create an Led on pin 13 and strobe it on/off
-  // Optionall set the speed; defaults to 100ms
+  // Optionally set the speed; defaults to 100ms
   (new five.Led(13)).strobe();
 
 });
@@ -83,7 +86,6 @@ board.on("ready", function() {
 
 - [Accelerometer Pan Tilt](https://github.com/rwldrn/johnny-five/blob/master/docs/accelerometer-pan-tilt.md)
 - [Accelerometer](https://github.com/rwldrn/johnny-five/blob/master/docs/accelerometer.md)
-- [Biped](https://github.com/rwldrn/johnny-five/blob/master/docs/biped.md)
 - [Board Multi](https://github.com/rwldrn/johnny-five/blob/master/docs/board-multi.md)
 - [Board](https://github.com/rwldrn/johnny-five/blob/master/docs/board.md)
 - [Boe Test Servos](https://github.com/rwldrn/johnny-five/blob/master/docs/boe-test-servos.md)
@@ -94,6 +96,8 @@ board.on("ready", function() {
 - [Claw](https://github.com/rwldrn/johnny-five/blob/master/docs/claw.md)
 - [Continuous Clock](https://github.com/rwldrn/johnny-five/blob/master/docs/continuous-clock.md)
 - [Continuous](https://github.com/rwldrn/johnny-five/blob/master/docs/continuous.md)
+- [Ed](https://github.com/rwldrn/johnny-five/blob/master/docs/ed.md)
+- [Gripper](https://github.com/rwldrn/johnny-five/blob/master/docs/gripper.md)
 - [Ir Motion](https://github.com/rwldrn/johnny-five/blob/master/docs/ir-motion.md)
 - [Ir Proximity](https://github.com/rwldrn/johnny-five/blob/master/docs/ir-proximity.md)
 - [Ir Reflect](https://github.com/rwldrn/johnny-five/blob/master/docs/ir-reflect.md)
@@ -102,6 +106,8 @@ board.on("ready", function() {
 - [Joystick Motor Led](https://github.com/rwldrn/johnny-five/blob/master/docs/joystick-motor-led.md)
 - [Joystick](https://github.com/rwldrn/johnny-five/blob/master/docs/joystick.md)
 - [Laser](https://github.com/rwldrn/johnny-five/blob/master/docs/laser.md)
+- [Lcd Enumeratechars](https://github.com/rwldrn/johnny-five/blob/master/docs/lcd-enumeratechars.md)
+- [Lcd Runner 20x4](https://github.com/rwldrn/johnny-five/blob/master/docs/lcd-runner-20x4.md)
 - [Lcd Runner](https://github.com/rwldrn/johnny-five/blob/master/docs/lcd-runner.md)
 - [Lcd Usechar](https://github.com/rwldrn/johnny-five/blob/master/docs/lcd-usechar.md)
 - [Lcd](https://github.com/rwldrn/johnny-five/blob/master/docs/lcd.md)
@@ -126,7 +132,6 @@ board.on("ready", function() {
 - [Ping](https://github.com/rwldrn/johnny-five/blob/master/docs/ping.md)
 - [Potentiometer](https://github.com/rwldrn/johnny-five/blob/master/docs/potentiometer.md)
 - [Proximity](https://github.com/rwldrn/johnny-five/blob/master/docs/proximity.md)
-- [Pwmservo Ported](https://github.com/rwldrn/johnny-five/blob/master/docs/pwmservo-ported.md)
 - [Radar Client](https://github.com/rwldrn/johnny-five/blob/master/docs/radar-client.md)
 - [Radar](https://github.com/rwldrn/johnny-five/blob/master/docs/radar.md)
 - [Repl](https://github.com/rwldrn/johnny-five/blob/master/docs/repl.md)
@@ -141,6 +146,7 @@ board.on("ready", function() {
 - [Servo Dual](https://github.com/rwldrn/johnny-five/blob/master/docs/servo-dual.md)
 - [Servo Tutorial](https://github.com/rwldrn/johnny-five/blob/master/docs/servo-tutorial.md)
 - [Servo](https://github.com/rwldrn/johnny-five/blob/master/docs/servo.md)
+- [Shiftregister](https://github.com/rwldrn/johnny-five/blob/master/docs/shiftregister.md)
 - [Slider Log](https://github.com/rwldrn/johnny-five/blob/master/docs/slider-log.md)
 - [Slider Pan](https://github.com/rwldrn/johnny-five/blob/master/docs/slider-pan.md)
 - [Slider Servo Control](https://github.com/rwldrn/johnny-five/blob/master/docs/slider-servo-control.md)
@@ -151,7 +157,7 @@ board.on("ready", function() {
 
 
 ## Contributing
-All contributions must adhere to the the [Idiomatic.js Style Guide](https://github.com/rwldrn/idiomatic.js),
+All contributions must adhere to the [Idiomatic.js Style Guide](https://github.com/rwldrn/idiomatic.js),
 by maintaining the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
 
 ## Release History

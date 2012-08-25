@@ -75,13 +75,15 @@ module.exports = function(grunt) {
         readme = [];
 
     files.forEach(function( filepath ) {
-      var values,
+      var values, devices,
           eg = file.read( filepath ),
           md = filepath.replace("eg", "docs").replace(".js", ".md"),
           png = filepath.replace("eg", "docs/breadboard").replace(".js", ".png"),
           fritz = filepath.replace("eg", "docs/breadboard").replace(".js", ".fzz"),
           title = filepath,
-          hasBoard, fritzfile, fritzpath;
+          hasPng, hasFzz, fritzfile, fritzpath;
+
+      devices = [];
 
       // Generate a title string from the file name
       [ [ /^.+\//, "" ],
@@ -95,17 +97,29 @@ module.exports = function(grunt) {
       fritzfile = fritzpath[ fritzpath.length - 1 ];
 
       // Modify code in example to appear as it would if installed via npm
-      eg = eg.replace("../lib/johnny-five.js", "johnny-five");
+      eg = eg.replace("../lib/johnny-five.js", "johnny-five")
+            .split("\n").filter(function( line ) {
 
-      hasBoard = path.existsSync(png);
+        // TODO: Abstract "tag" support into easily extended system
+        if ( /@device/.test(line) ) {
+          devices.push( "- " + line.replace(/^\/\/ @device/, "").trim() );
+          return false;
+        }
+        return true;
+      }).join("\n");
+
+      hasPng = path.existsSync(png);
+      hasFzz = path.existsSync(fritz);
+
 
       values = {
         title: _.titleize(title),
         command: "node " + filepath,
         example: eg,
         file: md,
-        breadboard: hasBoard ? templates.img({ png: png }) : "",
-        fritzing: hasBoard ? templates.fritzing({ fritzfile: fritzfile, fritz: fritz }) : ""
+        devices: devices.join("\n"),
+        breadboard: hasPng ? templates.img({ png: png }) : "",
+        fritzing: hasFzz ? templates.fritzing({ fritzfile: fritzfile, fritz: fritz }) : ""
       };
 
       // Write the file to /docs/*

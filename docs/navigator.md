@@ -340,12 +340,13 @@ Navigator.prototype.pivot = function( which, time ) {
   mag = new five.Magnetometer();
 
   // Servo gripper
-  gripper = new five.Servo({
-    pin: 13,
-    range: [ 20, 180 ]
+  gripper = new five.Gripper({
+    servo: {
+      pin: 13,
+      range: [ 20, 180 ]
+    },
+    scale: [ 0, 10 ]
   });
-
-  gripper.move(20);
 
   // New base navigator
   // right servo = pin 10, left servo = pin 11
@@ -545,6 +546,12 @@ Navigator.prototype.pivot = function( which, time ) {
 
 
 
+
+## Devices
+
+
+
+
 ## Documentation
 
 _(Nothing yet)_
@@ -558,7 +565,7 @@ _(Nothing yet)_
 
 
 ## Contributing
-All contributions must adhere to the the [Idiomatic.js Style Guide](https://github.com/rwldrn/idiomatic.js),
+All contributions must adhere to the [Idiomatic.js Style Guide](https://github.com/rwldrn/idiomatic.js),
 by maintaining the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
 
 ## Release History

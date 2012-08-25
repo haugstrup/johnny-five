@@ -84,6 +84,12 @@ when.all( readyList, function() {
 [navigator-joystick.fzz](https://github.com/rwldrn/johnny-five/blob/master/docs/breadboard/navigator-joystick.fzz)
 
 
+
+## Devices
+
+
+
+
 ## Documentation
 
 _(Nothing yet)_
@@ -97,7 +103,7 @@ _(Nothing yet)_
 
 
 ## Contributing
-All contributions must adhere to the the [Idiomatic.js Style Guide](https://github.com/rwldrn/idiomatic.js),
+All contributions must adhere to the [Idiomatic.js Style Guide](https://github.com/rwldrn/idiomatic.js),
 by maintaining the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
 
 ## Release History
